@@ -28,9 +28,9 @@ I helped design the scenario for the real-world validation experiments. The scen
 
 * **Benign interruption:** I moved a cube to a different location on the table.  
 * **Supportive interruption:** I moved a cube into the drawer.  
-* **Obstructive interruption:** I moved a cube out of the drawer.
+* **Obstructive interruption:** I closed the drawer after it had already been opened.
 
-I was the only person running the physical trials: 10 trials per scenario, 40 total. I also wrote the rough draft of the experimental section of the paper.
+I conducted 10 trials per scenario, 40 total, and wrote the first draft of the experimental section.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0;">
   <div style="text-align: center;">
