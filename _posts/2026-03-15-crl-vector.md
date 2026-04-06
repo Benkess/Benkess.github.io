@@ -34,25 +34,25 @@ I conducted 10 trials per scenario, 40 total, and wrote the first draft of the e
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0;">
   <div style="text-align: center;">
-    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; background: #f5f5f5; border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Without Interruption</div>
+    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--global-border-color, #e5e7eb); background: var(--global-bg-color, #f5f5f5); color: var(--global-text-color, #333); border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Without Interruption</div>
     <video autoplay muted loop playsinline controls style="width: 100%; margin-top: 0.55rem; display: block; background: #000; border-radius: 12px; aspect-ratio: 16/9; object-fit: contain;">
       <source src="/video/put_on_the_drawer_without_interrupt_anonymized.mp4" type="video/mp4">
     </video>
   </div>
   <div style="text-align: center;">
-    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; background: #f5f5f5; border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Benign Interruption</div>
+    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--global-border-color, #e5e7eb); background: var(--global-bg-color, #f5f5f5); color: var(--global-text-color, #333); border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Benign Interruption</div>
     <video autoplay muted loop playsinline controls style="width: 100%; margin-top: 0.55rem; display: block; background: #000; border-radius: 12px; aspect-ratio: 16/9; object-fit: contain;">
       <source src="/video/put_on_drawer_benign_anonymized.mp4" type="video/mp4">
     </video>
   </div>
   <div style="text-align: center;">
-    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; background: #f5f5f5; border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Supportive Interruption</div>
+    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--global-border-color, #e5e7eb); background: var(--global-bg-color, #f5f5f5); color: var(--global-text-color, #333); border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Supportive Interruption</div>
     <video autoplay muted loop playsinline controls style="width: 100%; margin-top: 0.55rem; display: block; background: #000; border-radius: 12px; aspect-ratio: 16/9; object-fit: contain;">
       <source src="/video/put_on_the_drawer_real_supportive_anonymized.mp4" type="video/mp4">
     </video>
   </div>
   <div style="text-align: center;">
-    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; background: #f5f5f5; border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Obstructive Interruption</div>
+    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--global-border-color, #e5e7eb); background: var(--global-bg-color, #f5f5f5); color: var(--global-text-color, #333); border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Obstructive Interruption</div>
     <video autoplay muted loop playsinline controls style="width: 100%; margin-top: 0.55rem; display: block; background: #000; border-radius: 12px; aspect-ratio: 16/9; object-fit: contain;">
       <source src="/video/put_on_the_drawer_real_obstructive_anonymized.mp4" type="video/mp4">
     </video>
