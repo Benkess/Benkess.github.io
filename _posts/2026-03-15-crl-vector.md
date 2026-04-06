@@ -32,75 +32,28 @@ I helped design the scenario for the real-world validation experiments. The scen
 
 I was the only person running the physical trials: 10 trials per scenario, 40 total. I also wrote the rough draft of the experimental section of the paper.
 
-<style>
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  margin: 1.5rem 0;
-}
-@media (max-width: 768px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 480px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.video-grid .video-item {
-  text-align: center;
-}
-.video-grid .video-label {
-  height: 34px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #e5e7eb;
-  background: #f5f5f5;
-  border-radius: 4px;
-  font-size: 0.92rem;
-  font-weight: 400;
-  line-height: 1;
-  margin: 0 auto;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-.video-grid video {
-  width: 100%;
-  margin-top: 0.55rem;
-  display: block;
-  background: #000;
-  border-radius: 12px;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-}
-</style>
-
-<div class="video-grid">
-  <div class="video-item">
-    <div class="video-label">Without Interruption</div>
-    <video autoplay loop muted playsinline controls>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0;">
+  <div style="text-align: center;">
+    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; background: #f5f5f5; border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Without Interruption</div>
+    <video autoplay muted loop playsinline controls style="width: 100%; margin-top: 0.55rem; display: block; background: #000; border-radius: 12px; aspect-ratio: 16/9; object-fit: contain;">
       <source src="/video/put_on_the_drawer_without_interrupt_anonymized.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="video-item">
-    <div class="video-label">Benign Interruption</div>
-    <video autoplay loop muted playsinline controls>
+  <div style="text-align: center;">
+    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; background: #f5f5f5; border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Benign Interruption</div>
+    <video autoplay muted loop playsinline controls style="width: 100%; margin-top: 0.55rem; display: block; background: #000; border-radius: 12px; aspect-ratio: 16/9; object-fit: contain;">
       <source src="/video/put_on_drawer_benign_anonymized.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="video-item">
-    <div class="video-label">Supportive Interruption</div>
-    <video autoplay loop muted playsinline controls>
+  <div style="text-align: center;">
+    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; background: #f5f5f5; border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Supportive Interruption</div>
+    <video autoplay muted loop playsinline controls style="width: 100%; margin-top: 0.55rem; display: block; background: #000; border-radius: 12px; aspect-ratio: 16/9; object-fit: contain;">
       <source src="/video/put_on_the_drawer_real_supportive_anonymized.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="video-item">
-    <div class="video-label">Obstructive Interruption</div>
-    <video autoplay loop muted playsinline controls>
+  <div style="text-align: center;">
+    <div style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; background: #f5f5f5; border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Obstructive Interruption</div>
+    <video autoplay muted loop playsinline controls style="width: 100%; margin-top: 0.55rem; display: block; background: #000; border-radius: 12px; aspect-ratio: 16/9; object-fit: contain;">
       <source src="/video/put_on_the_drawer_real_obstructive_anonymized.mp4" type="video/mp4">
     </video>
   </div>
