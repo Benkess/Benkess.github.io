@@ -1,7 +1,7 @@
 ---
-title: 'VECTOR: Real-World Validation'
+title: 'Real-World Multi-Robot Experiments'
 date: 2026-03-15
-permalink: /posts/2026/03/crl-vector/
+permalink: /posts/2026/03/crl-real-world-experiments/
 tags:
   - robotics
   - research
@@ -13,8 +13,6 @@ As a research assistant in the UVA Collaborative Robotics Lab, I implemented the
 ## Paper Summary
 
 The goal of the paper was to have a decentralized framework that combines constraint-aware peer-to-peer task negotiation, symbolic plan grounding, dependency-based parallel scheduling, and plan verification. The system treats two robot manipulators as independent agents with their own LLM planners. Both robots are given a scene observation, a global task goal, task constraints, and individual robot constraints, all represented symbolically in PDDL. The two LLMs negotiate a plan and communicate their robot's individual constraints. Once they agree on a plan, one of them submits a symbolic representation of the actions each robot will take; the other robot either signs off on the plan or they go back to negotiating. A third LLM reviews the final plan and ensures it will lead to completion of the global goal. During execution, the system monitors the shared symbolic state and responds to environmental changes through targeted recovery strategies such as motion-level adjustment or decentralized replanning. 
-
-The paper is under review, and the code and data will be released upon acceptance. More information can be found on the paper's [website](https://vector-planning.github.io/).
 
 ## Direct Contributions to the Paper
 
@@ -30,7 +28,7 @@ I helped design the scenario for the real-world validation experiments. The scen
 * **Supportive interruption:** I moved a cube into the drawer.  
 * **Obstructive interruption:** I closed the drawer after it had already been opened.
 
-I conducted 10 trials per scenario, 40 total, and wrote the first draft of the experimental section.
+I independently conducted all 40 physical trials for the real-world evaluation across four scenarios, with 10 trials per scenario.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0;">
   <div style="text-align: center;">
