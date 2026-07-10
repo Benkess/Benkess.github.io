@@ -2,6 +2,7 @@
 title: 'GUI Tester: A Computer-Use Agent for Testing GUIs'
 date: 2026-04-28
 permalink: /posts/2026/04/gui-tester/
+excerpt: "GUI Tester is a computer-use subagent that lets coding agents test browser GUIs by interacting with them, capturing screenshot-backed findings, and using structured reports to guide fixes."
 tags:
   - ai agents
   - gui testing
@@ -21,7 +22,16 @@ The project code and usage documentation are available in the public [GUI Tester
 
 See my accompanying presentation/demo on [YouTube](https://youtu.be/_UleWr2skwg) or below:
 
-[embed the video presentation here: [https://youtu.be/_UleWr2skwg](https://youtu.be/_UleWr2skwg). Title: "GUI Tester Final Project Presentation". Use visible playback controls and do not autoplay.]
+<div style="position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 1.5rem 0 2rem; background: #000; border-radius: 8px; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/_UleWr2skwg?rel=0"
+    title="GUI Tester Final Project Presentation"
+    loading="lazy"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;">
+  </iframe>
+</div>
 
 ## Motivation: The Interaction Gap
 
@@ -33,17 +43,28 @@ I think of this as an **interaction gap** in agentic software development. Codin
 
 GUI Tester is my attempt to close that gap. Instead of relying on a human to repeatedly test the rendered result, the coding agent can call a specialized GUI-use subagent, receive a report with screenshot-backed findings, modify the implementation, and test again.
 
-[Create a highlighted callout element here: **The goal:** enable coding agents to independently test and validate the GUIs they build.]
+<div style="margin: 1.5rem 0; padding: 1rem 1.15rem; border-left: 4px solid #f97316; background: rgba(249, 115, 22, 0.08); border-radius: 6px;">
+  <strong>The goal:</strong> enable coding agents to independently test and validate the GUIs they build.
+</div>
+
+<!-- TODO: Add figure from motivation slide -->
 
 ## System Design
 
 The system is organized into three main layers: a computer-use agent, a GUI testing agent, and a Model Context Protocol (MCP) integration layer. Each layer adds a different piece of functionality.
 
-[include image of slide 3 of presentation as a wide figure here, or recreate with website formatting. No caption needed.]
+<figure style="margin: 1.5rem 0 2rem;">
+  <img src="/images/gui_tester/GUI_testing_agent_details.jpg" alt="Presentation slide showing the GUI testing agent built from a computer-use agent, GUI testing tool, and GUI testing agent layer." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+</figure>
+
+<!-- TODO: replace figure with image of slide 3 of presentation as a wide figure here, or recreate with website formatting -->
 
 ### Computer-Use Agent
 
-[include `final_project/report_figures/computer_use_agent_architecture.jpg` as a large figure here. Caption: "Computer-Use Agent Architecture."]
+<figure style="margin: 1.5rem auto 2rem; max-width: 780px;">
+  <img src="/images/gui_tester/computer_use_agent_architecture.jpg" alt="Diagram of the computer-use agent architecture." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <figcaption style="margin-top: 0.5rem; text-align: center; font-size: 0.9rem; color: #6b7280;">Computer-Use Agent Architecture.</figcaption>
+</figure>
 
 GUI Tester is built on a **computer-use agent**, meaning it observes the browser visually and performs actions similar to how a human tester would interact with the interface.
 
@@ -64,7 +85,10 @@ The computer-use layer is intentionally general. It provides the basic ability t
 
 ### GUI Testing Agent
 
-[include `final_project/report_figures/GUI_testing_agent_details.jpg` as a large figure here. Caption: "GUI Testing Agent Details."]
+<figure style="margin: 1.5rem 0 2rem;">
+  <img src="/images/gui_tester/GUI_testing_agent_details.jpg" alt="Diagram of the GUI testing agent details." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <figcaption style="margin-top: 0.5rem; text-align: center; font-size: 0.9rem; color: #6b7280;">GUI Testing Agent Details.</figcaption>
+</figure>
 
 The second layer is the GUI testing agent. This agent inherits the observation, reasoning, and action capabilities of the computer-use agent, but adds tools specifically designed for GUI evaluation.
 
@@ -91,7 +115,10 @@ The key design decision was to make GUI Tester a separate subagent rather than b
 
 The resulting loop is simple: the coding agent calls the GUI tester through the MCP tool; the GUI tester interacts with the GUI and returns notes, screenshots, and a report; the coding agent uses those artifacts to patch the implementation or decide that the GUI is acceptable. This loop can repeat until the interface satisfies the specification, reducing the need for me to manually inspect the GUI and explain each issue.
 
-[include `final_project/report_figures/MCP_integration_flow.jpg` as a wide figure here. Caption: "MCP integration flowchart."]
+<figure style="margin: 1.5rem 0 2rem;">
+  <img src="/images/gui_tester/MCP_integration_flow.jpg" alt="MCP integration flowchart connecting the coding agent, MCP tool, GUI testing agent, notes, screenshots, and report." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <figcaption style="margin-top: 0.5rem; text-align: center; font-size: 0.9rem; color: #6b7280;">MCP integration flowchart.</figcaption>
+</figure>
 
 ## Evaluation
 
@@ -111,9 +138,15 @@ The main example was a personal website template for a fictional person. The int
 
 Below are images of a valid home page and visually incorrect GUIs, with issues annotated in red boxes. All of these examples were generated with Codex. The valid home page example is the result of manual reprompting.
 
-[include `final_project/report_figures/00_valid_personal_webpage_index.png` as a large figure here. Caption: "Intended personal website interface."]
+<figure style="margin: 1.5rem 0 2rem;">
+  <img src="/images/gui_tester/00_valid_personal_webpage_index.png" alt="Intended personal website interface." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <figcaption style="margin-top: 0.5rem; text-align: center; font-size: 0.9rem; color: #6b7280;">Intended personal website interface.</figcaption>
+</figure>
 
-[include `final_project/report_figures/annotated_incorrect_guis.png` as a large figure here. Caption: "Red-box annotated examples of visually incorrect GUIs."]
+<figure style="margin: 1.5rem 0 2rem;">
+  <img src="/images/gui_tester/annotated_incorrect_guis.png" alt="Red-box annotated examples of visually incorrect GUIs." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <figcaption style="margin-top: 0.5rem; text-align: center; font-size: 0.9rem; color: #6b7280;">Red-box annotated examples of visually incorrect GUIs.</figcaption>
+</figure>
 
 ### Individual Testing of the GUI Tester
 
@@ -123,9 +156,18 @@ This individual testing verified that the GUI testing agent’s own tool use was
 
 In the personal website example, the GUI tester found that the main content was clipped near the bottom of the viewport at the target 1280×720 size. It also found that the LinkedIn contact link was not visible in the left contact rows, even though the specification expected contact links such as Email, ORCID, GitHub, and LinkedIn to be available. I have included an example note and final report output from one trial below.
 
-[include `final_project/report_figures/note_001.png` as a large figure here. Caption: "Example saved note with screenshot from the GUI tester."]
+<figure style="margin: 1.5rem auto 2rem; max-width: 920px;">
+  <img src="/images/gui_tester/note_001.png" alt="Example saved note with screenshot from the GUI tester." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <figcaption style="margin-top: 0.5rem; text-align: center; font-size: 0.9rem; color: #6b7280;">Example saved note with screenshot from the GUI tester.</figcaption>
+</figure>
 
-[include `final_project/report_figures/final_report_top_half.png` and `final_project/report_figures/final_report_bottom_half.png` together as a report-preview figure here. Caption: "Example GUI Tester report output."]
+<figure style="margin: 1.5rem 0 2rem;">
+  <div style="display: grid; gap: 0.75rem;">
+    <img src="/images/gui_tester/final_report_top_half.png" alt="Top half of an example GUI Tester report output." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+    <img src="/images/gui_tester/final_report_bottom_half.png" alt="Bottom half of an example GUI Tester report output." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  </div>
+  <figcaption style="margin-top: 0.5rem; text-align: center; font-size: 0.9rem; color: #6b7280;">Example GUI Tester report output.</figcaption>
+</figure>
 
 ### MCP Testing With Coding Agents
 
@@ -145,9 +187,16 @@ This iterative process worked especially well for the personal website example. 
 
 Below are before and after images for a trial using Codex as the coding agent:
 
-[include `final_project/report_figures/04_annotated.png` as a figure here. Title: "A failing GUI example:"]
-
-[include `codex_fixed_gui.png`, as a figure here. Try to fit it next to the incorrect version. Title: "Fixed personal website."]
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; align-items: start; margin: 1.5rem 0 2rem;">
+  <figure style="margin: 0;">
+    <figcaption style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--global-border-color, #e5e7eb); background: var(--global-bg-color, #f5f5f5); color: var(--global-text-color, #333); border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">A failing GUI example:</figcaption>
+    <img src="/images/gui_tester/04_annotated.png" alt="A failing GUI example with visual issues annotated in red." loading="lazy" style="display: block; width: 100%; height: auto; margin-top: 0.55rem; border-radius: 8px;">
+  </figure>
+  <figure style="margin: 0;">
+    <figcaption style="min-height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--global-border-color, #e5e7eb); background: var(--global-bg-color, #f5f5f5); color: var(--global-text-color, #333); border-radius: 4px; font-size: 0.92rem; line-height: 1.2; padding: 6px 10px; box-sizing: border-box;">Fixed personal website.</figcaption>
+    <img src="/images/gui_tester/codex_fixed_gui.png" alt="Fixed personal website after the coding agent used GUI Tester feedback." loading="lazy" style="display: block; width: 100%; height: auto; margin-top: 0.55rem; border-radius: 8px;">
+  </figure>
+</div>
 
 ### Conclusion
 
