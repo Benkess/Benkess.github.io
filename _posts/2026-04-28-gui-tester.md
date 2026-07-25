@@ -47,17 +47,27 @@ GUI Tester is my attempt to close that gap. Instead of relying on a human to rep
   <strong>The goal:</strong> enable coding agents to independently test and validate the GUIs they build.
 </div>
 
-<!-- TODO: Add figure from motivation slide -->
-
 ## System Design
 
 The system is organized into three main layers: a computer-use agent, a GUI testing agent, and a Model Context Protocol (MCP) integration layer. Each layer adds a different piece of functionality.
 
-<figure style="margin: 1.5rem 0 2rem;">
-  <img src="/images/gui_tester/GUI_testing_agent_details.jpg" alt="Presentation slide showing the GUI testing agent built from a computer-use agent, GUI testing tool, and GUI testing agent layer." loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 8px;">
-</figure>
-
-<!-- TODO: replace figure with image of slide 3 of presentation as a wide figure here, or recreate with website formatting -->
+<div aria-label="GUI Tester system design overview" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0 2rem;">
+  <section style="min-height: 220px; padding: 1.25rem; background: #f8f9fb; border: 1px solid #e5e7eb; border-radius: 8px;">
+    <p style="margin: 0 0 0.45rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: #ff5a2a;">Layer 1</p>
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; line-height: 1.15; font-weight: 800; color: #333;">Computer-Use Agent</h3>
+    <p style="margin: 0; font-size: 0.92rem; line-height: 1.35; color: #666;">Provides the base interaction layer: observing the browser and executing actions like clicking, typing, and dragging.</p>
+  </section>
+  <section style="min-height: 220px; padding: 1.25rem; background: #f8f9fb; border: 1px solid #e5e7eb; border-radius: 8px;">
+    <p style="margin: 0 0 0.45rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: #ff5a2a;">Layer 2</p>
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; line-height: 1.15; font-weight: 800; color: #333;">GUI Testing Agent</h3>
+    <p style="margin: 0; font-size: 0.92rem; line-height: 1.35; color: #666;">Extends the computer-use agent with tools for screenshot capture, note-taking, and report generation.</p>
+  </section>
+  <section style="min-height: 220px; padding: 1.25rem; background: #f8f9fb; border: 1px solid #e5e7eb; border-radius: 8px;">
+    <p style="margin: 0 0 0.45rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: #ff5a2a;">Layer 3</p>
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; line-height: 1.15; font-weight: 800; color: #333;">MCP Integration</h3>
+    <p style="margin: 0; font-size: 0.92rem; line-height: 1.35; color: #666;">Exposes the GUI tester as a tool that coding agents such as Claude Code or Codex can call.</p>
+  </section>
+</div>
 
 ### Computer-Use Agent
 
